@@ -1,3 +1,47 @@
+// Mobile menu toggle
+const mobileMenuButton = document.getElementById("mobile-menu-button");
+const mobileMenu = document.getElementById("mobile-menu");
+const mobileMenuPanel = document.getElementById("mobile-menu-panel");
+const mobileMenuBackdrop = document.getElementById("mobile-menu-backdrop");
+const mobileMenuClose = document.getElementById("mobile-menu-close");
+const mobileNavItems = document.querySelectorAll(".mobile-nav-item");
+
+// Open mobile menu with smooth transition
+function openMobileMenu() {
+    mobileMenu.classList.remove("hidden");
+    // Trigger reflow to ensure transitions work
+    mobileMenu.offsetHeight;
+    // Add classes to trigger transitions
+    mobileMenuPanel.classList.remove("-translate-x-full");
+    mobileMenuBackdrop.classList.remove("opacity-0");
+    mobileMenuBackdrop.classList.add("opacity-50");
+}
+
+// Close mobile menu with smooth transition
+function closeMobileMenu() {
+    mobileMenuPanel.classList.add("-translate-x-full");
+    mobileMenuBackdrop.classList.remove("opacity-50");
+    mobileMenuBackdrop.classList.add("opacity-0");
+    // Wait for transition to complete before hiding
+    setTimeout(() => {
+        mobileMenu.classList.add("hidden");
+    }, 300);
+}
+
+// Open mobile menu
+mobileMenuButton.addEventListener("click", openMobileMenu);
+
+// Close mobile menu
+mobileMenuClose.addEventListener("click", closeMobileMenu);
+
+// Close menu when clicking backdrop
+mobileMenuBackdrop.addEventListener("click", closeMobileMenu);
+
+// Close menu when clicking nav items
+mobileNavItems.forEach(item => {
+    item.addEventListener("click", closeMobileMenu);
+});
+
 // Smooth scroll navigation
 const navItems = document.querySelectorAll(".nav-item");
 

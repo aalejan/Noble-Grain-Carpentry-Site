@@ -32,6 +32,8 @@
     <div class="max-w-6xl mx-auto px-4 py-4">
       <div class="flex justify-between items-center">
         <img src="/src/images/Logo.jpeg" alt="Nobel Grain Carpentry" class="h-24 w-24 rounded-full object-cover">
+
+        <!-- Desktop Navigation -->
         <div class="hidden md:flex gap-6 text-2xl">
           <a href="#about" class="text-gray-600 hover:text-amber-800 transition nav-item">About</a>
           <a href="#services" class="text-gray-600 hover:text-amber-800 transition nav-item">Services</a>
@@ -40,9 +42,45 @@
           <a href="#areas" class="text-gray-600 hover:text-amber-800 transition nav-item">Service Areas</a>
           <a href="#contact" class="text-gray-600 hover:text-amber-800 transition nav-item">Contact</a>
         </div>
-        <a href="tel:978-844-9872" class="bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded font-semibold">
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-amber-800 focus:outline-none">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+
+        <a href="tel:978-844-9872" class="hidden md:block bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded font-semibold">
           Call Now
         </a>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40">
+      <!-- Background overlay with fade transition -->
+      <div id="mobile-menu-backdrop" class="absolute inset-0 bg-black transition-opacity duration-300 opacity-0"></div>
+
+      <!-- Menu panel with slide transition -->
+      <div id="mobile-menu-panel" class="bg-white w-64 h-full shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out relative z-10">
+        <div class="flex justify-end p-4">
+          <button id="mobile-menu-close" class="text-gray-600 hover:text-amber-800 focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-col gap-4 px-6 text-lg">
+          <a href="#about" class="text-gray-600 hover:text-amber-800 transition nav-item mobile-nav-item py-2 border-b border-gray-200">About</a>
+          <a href="#services" class="text-gray-600 hover:text-amber-800 transition nav-item mobile-nav-item py-2 border-b border-gray-200">Services</a>
+          <a href="#gallery" class="text-gray-600 hover:text-amber-800 transition nav-item mobile-nav-item py-2 border-b border-gray-200">Gallery</a>
+          <a href="#process" class="text-gray-600 hover:text-amber-800 transition nav-item mobile-nav-item py-2 border-b border-gray-200">Process</a>
+          <a href="#areas" class="text-gray-600 hover:text-amber-800 transition nav-item mobile-nav-item py-2 border-b border-gray-200">Service Areas</a>
+          <a href="#contact" class="text-gray-600 hover:text-amber-800 transition nav-item mobile-nav-item py-2 border-b border-gray-200">Contact</a>
+          <a href="tel:978-844-9872" class="bg-amber-700 hover:bg-amber-800 text-white px-4 py-3 rounded font-semibold text-center mt-4">
+            Call Now
+          </a>
+        </div>
       </div>
     </div>
   </nav>
